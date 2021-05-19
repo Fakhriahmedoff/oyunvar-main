@@ -1,0 +1,152 @@
+footer 
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    row-gap: 10px;
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+    /* height: 340px; */
+    background-color: #222;
+    align-self: flex-end;
+}
+footer .f1 
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap:20px;
+    row-gap: 20px;
+    width: 100%;
+}
+footer .text-cont-f
+{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+footer .text-cont-f h2 
+{
+    font-size: 25px;
+    color: white;
+    margin: 0px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+footer .text-cont-f p 
+{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    row-gap: 10px;
+    font-size: 20px;
+}
+footer .text-cont-f p a 
+{
+    text-decoration: none;
+    color: gray;
+    transition: 0.3s;
+
+}
+footer .text-cont-f p a:hover 
+{
+    color: green;
+    transition: 0.3s;
+}
+footer .text-cont-f .text  
+{
+    font-size: 20px;
+    margin: 0px;
+    color: gray;
+    text-align: justify;
+    width: 500px;
+}
+@media screen and (max-width:500px)
+{
+    footer .text-cont-f .text  
+    {
+        font-size: 20px;
+        margin: 0px;
+        color: gray;
+        text-align: justify;
+        width: 100%;
+    }
+    footer .text-cont-f h2
+    {
+        width: 100%;
+        text-align: center;
+    }
+}
+footer .img-cont 
+{
+    width: 100%;
+    height: 30px;
+    justify-content: center;
+}
+
+footer hr 
+{
+    width: 100%;
+    height: 1px;
+    border: none;
+    background-color: gray;
+}
+footer .f2 
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+}
+footer .f2 .social-cont
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color:rgb(97, 95, 95);
+    transition: 0.4s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+    font-weight: 700;
+    font-size: 20px;
+}
+footer .f2 .social-cont1:hover
+{
+    background-color: #3b5998;
+    color: white;
+}
+footer .f2 .social-cont2:hover
+{
+    background-color: #00aced;
+    color: white;
+}
+footer .f2 .social-cont3:hover
+{
+    background-color: #ea4c89;
+    color: white;
+}
+footer .f2 .social-cont4:hover
+{
+    background-color: darkred;
+    color: white;
+}
+
+
+
+footer .f3 
+{
+    width: 100%;
+    color: gray;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    margin: 0px;
+}

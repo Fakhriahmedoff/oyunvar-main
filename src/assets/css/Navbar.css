@@ -1,0 +1,71 @@
+header 
+{
+    width: 90%;
+    height: auto;
+    background-color: #222;
+    padding-left: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    top: 0px;
+    padding-right: 5%;
+    position: fixed;
+}
+header nav
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+header .text-cont
+{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+    
+}
+header .navbar-text
+{
+    color: white;
+    margin: 0px;
+    font-size: 18px;
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+}
+header .btn-cont 
+{
+    display: flex;
+    column-gap: 10px;
+}
+header .btn 
+{
+    border-radius: 5px;
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 30px;
+    color: black;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    column-gap: 10px;
+}
+header .btn-y 
+{
+    background-color: #ea9904;
+    color: white;
+}
+@media screen and (max-width:900px)
+{
+    header nav 
+    {
+        justify-content: center;
+    }
+}
