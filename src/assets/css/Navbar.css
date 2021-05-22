@@ -9,7 +9,9 @@ header
     top: 0px;
     padding-right: 5%;
     position: fixed;
+    z-index: 101;
 }
+
 header nav
 {
     width: 100%;
@@ -20,27 +22,30 @@ header nav
     justify-content: space-between;
     align-items: center;
 }
+
 header .text-cont
 {
     display: flex;
     justify-content: space-between;
     column-gap: 30px;
-    
 }
+
 header .navbar-text
 {
     color: white;
     margin: 0px;
-    font-size: 18px;
+    font-size: 15px;
     display: flex;
     column-gap: 5px;
     align-items: center;
 }
+
 header .btn-cont 
 {
     display: flex;
     column-gap: 10px;
 }
+
 header .btn 
 {
     border-radius: 5px;
@@ -52,16 +57,23 @@ header .btn
     border: none;
     display: flex;
     justify-content: center;
+    font-family: "Poppins";
     align-items: center;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 14px;
     column-gap: 10px;
+    transition: 0.5s background-color ;
+}
+header .btn:hover 
+{
+    background-color: gray;
+    color: white;
 }
 header .btn-y 
 {
     background-color: #ea9904;
     color: white;
 }
+
 @media screen and (max-width:900px)
 {
     header nav 

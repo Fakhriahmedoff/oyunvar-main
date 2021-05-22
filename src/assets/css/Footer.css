@@ -2,27 +2,24 @@ footer
 {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
     justify-content: center;
     padding-top: 30px;
     padding-bottom: 20px;
-    margin-top: 10px;
     row-gap: 10px;
     width: 90%;
     padding-left: 5%;
     padding-right: 5%;
-    /* height: 340px; */
     background-color: #222;
     align-self: flex-end;
 }
 footer .f1 
 {
+    width: 1100px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     column-gap:20px;
     row-gap: 20px;
-    width: 100%;
 }
 footer .text-cont-f
 {
@@ -32,7 +29,7 @@ footer .text-cont-f
 }
 footer .text-cont-f h2 
 {
-    font-size: 25px;
+    font-size: 20px;
     color: white;
     margin: 0px;
     text-transform: uppercase;
@@ -44,27 +41,26 @@ footer .text-cont-f p
     flex-direction: column;
     margin: 0px;
     row-gap: 10px;
-    font-size: 20px;
+    font-size: 18px;
 }
 footer .text-cont-f p a 
 {
     text-decoration: none;
     color: gray;
     transition: 0.3s;
-
 }
 footer .text-cont-f p a:hover 
 {
-    color: green;
+    color: green !important;
     transition: 0.3s;
 }
 footer .text-cont-f .text  
 {
-    font-size: 20px;
+    font-size: 18px;
     margin: 0px;
     color: gray;
     text-align: justify;
-    width: 500px;
+    width: 350px;
 }
 @media screen and (max-width:500px)
 {
@@ -88,10 +84,10 @@ footer .img-cont
     height: 30px;
     justify-content: center;
 }
-
 footer hr 
 {
     width: 100%;
+    margin-top: 30px;
     height: 1px;
     border: none;
     background-color: gray;
@@ -105,8 +101,8 @@ footer .f2
 }
 footer .f2 .social-cont
 {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     background-color:rgb(97, 95, 95);
     transition: 0.4s;
@@ -117,6 +113,7 @@ footer .f2 .social-cont
     color: gray;
     font-weight: 700;
     font-size: 20px;
+    margin-top: 10px;
 }
 footer .f2 .social-cont1:hover
 {
@@ -138,15 +135,20 @@ footer .f2 .social-cont4:hover
     background-color: darkred;
     color: white;
 }
-
-
-
 footer .f3 
 {
     width: 100%;
     color: gray;
     display: flex;
     justify-content: center;
-    font-size: 18px;
+    font-size: 15px;
     margin: 0px;
+    margin-top: 20px;
+}
+
+@media screen and (max-width:1100px) {
+    .f1 
+    {
+        width: 100% !important;
+    }
 }

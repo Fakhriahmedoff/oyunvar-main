@@ -4,10 +4,12 @@ function Navbar() {
     return (
         <header>
             <nav>
+
                 <div className='text-cont'>
-                    <p className='navbar-text'><i class="fas fa-info-circle"></i>  Haqqımızda</p>
-                    <p className='navbar-text'><i class="fas fa-phone-square-alt"></i>  Əlaqə</p>
-                    <p className='navbar-text'><i class="fas fa-wallet"></i>  Bank Hesablarımız</p>
+                    <img width='20px' height='20px' src="" alt="" />
+                    <a className='navbar-text'><i class="fas fa-info-circle"></i>  Haqqımızda</a>
+                    <a className='navbar-text'><i class="fas fa-phone-square-alt"></i>  Əlaqə</a>
+                    <a className='navbar-text'><i class="fas fa-wallet"></i>  Bank Hesablarımız</a>
                 </div>
 
                 <div className='btn-cont'>

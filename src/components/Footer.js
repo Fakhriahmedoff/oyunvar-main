@@ -3,7 +3,7 @@ import '../assets/css/Footer.css'
 function Footer() {
     return (
         <footer>
-            
+            <div className="footerCont">
             <div className='f1'>
                 <div className='text-cont-f'>
                     <h2>Haqqımızda</h2>
@@ -36,20 +36,17 @@ function Footer() {
                 </div>
             </div>
             
-            <div className='img-cont'>
-                <img src='#' width='30px' height='30px'/>
-            </div>
-
             <hr/>
 
             <div className='f2'>
-                <a className='social-cont social-cont1'>f</a>
-                <a className='social-cont social-cont2'>t</a>
-                <a className='social-cont social-cont3'>i</a>
-                <a className='social-cont social-cont4'>y</a>
+                <a className='social-cont social-cont1' href="">f</a>
+                <a className='social-cont social-cont2' href="">t</a>
+                <a className='social-cont social-cont3' href="">i</a>
+                <a className='social-cont social-cont4' href="">y</a>
             </div>
 
             <p className='f3'>Copyright © 2021 Bütün hüquqları qorunur. </p>
+            </div>
         </footer>
     )
 }
