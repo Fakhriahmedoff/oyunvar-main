@@ -8,11 +8,15 @@ body {
 
 a 
 {
-  text-decoration: none;
+  text-decoration: none !important;
   cursor: pointer;
+  color: black;
   transition: color 0.5s;
 }
-
+button 
+{
+  cursor: pointer;
+}
 a:hover  
 {
   color: gray !important;
@@ -23,8 +27,6 @@ a:hover
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 50px;
-  min-height: 100vh;
 }
 
 .page

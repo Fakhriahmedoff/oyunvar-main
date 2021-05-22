@@ -14,7 +14,7 @@ footer
 }
 footer .f1 
 {
-    width: 1100px;
+    width: 1400px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -146,7 +146,11 @@ footer .f3
     margin-top: 20px;
 }
 
-@media screen and (max-width:1100px) {
+@media screen and (max-width:1400px) {
+    .footerCont 
+    {
+        width: 100%;
+    }
     .f1 
     {
         width: 100% !important;
