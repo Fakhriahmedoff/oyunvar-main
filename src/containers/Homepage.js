@@ -74,9 +74,8 @@ function Homepage() {
                     <a href='google.com'>
                         <img src={slider2} width='100%' height='auto' className='sliderElement sliderElement2'></img>
                     </a>
-                </Slider>
+                </Slider> 
             </div> */}
-
             <div className="gamesTitle"><div className="gamesTitleInside"><p className='textTitle'><GamesIcon/> OYUNLAR</p></div></div>
             <div className="gamesCont">
                 <Game image={gameimage3} text="Point Blank"/>
