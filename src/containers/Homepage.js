@@ -65,6 +65,7 @@ function Homepage() {
     
 
     return (
+         
         
         <div className='page homepage'>
             {/* <div className="slider">
