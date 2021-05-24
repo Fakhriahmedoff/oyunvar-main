@@ -16,6 +16,7 @@ import gameimage6 from  '../assets/images/pubglite.jpg'
 
 
 import Game from '../components/Game';
+import { useLocation } from 'react-router-dom';
 
 
 
@@ -24,7 +25,8 @@ import Game from '../components/Game';
   
 
 function Homepage() {
-
+    const location = useLocation();
+    console.log(location.pathname)
     
 
     return (
@@ -34,12 +36,12 @@ function Homepage() {
             <div>
             <div className="gamesTitle"><div className="gamesTitleInside"><p className='textTitle'><GamesIcon/> OYUNLAR</p></div></div>
             <div className="gamesCont">
-                <Game image={gameimage3} text="Point Blank"/>
-                <Game image={gameimage2} text="MOBILE LEGENDS"/>
-                <Game image={gameimage4} text="PUBG"/>
-                <Game image={gameimage5} text="ZULA"/>
-                <Game image={gameimage1} text="FREE FIRE"/>
-                <Game image={gameimage6} text="PUBG LITE"/>
+                <Game image={gameimage3} id='2' text="Point Blank"/>
+                <Game image={gameimage2} id='2' text="MOBILE LEGENDS"/>
+                <Game image={gameimage4} id='2' text="PUBG"/>
+                <Game image={gameimage5} id='2' text="ZULA"/>
+                <Game image={gameimage1} id='2' text="FREE FIRE"/>
+                <Game image={gameimage6} id='2' text="PUBG LITE"/>
             </div>
             </div>
             

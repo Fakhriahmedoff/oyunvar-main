@@ -16,9 +16,9 @@ function Navbar() {
                         {
                             !mobilenav &&
                             <>
-                            <a className='navbar-text'><i class="fas fa-info-circle"></i>  Haqqımızda</a>
-                            <a className='navbar-text'><i class="fas fa-phone-square-alt"></i>  Əlaqə</a>
-                            <a className='navbar-text'><i class="fas fa-wallet"></i>  Bank Hesablarımız</a>
+                            <a className='navbar-text'><i className="fas fa-info-circle"></i>  Haqqımızda</a>
+                            <a className='navbar-text'><i className="fas fa-phone-square-alt"></i>  Əlaqə</a>
+                            <a className='navbar-text'><i className="fas fa-wallet"></i>  Bank Hesablarımız</a>
                             </>
                         }
                     </div>
@@ -26,8 +26,8 @@ function Navbar() {
                     {
                         !mobilenav &&
                         <div className='btn-cont'>
-                            <button className='btn btn-y'> <i class="fas fa-plus-circle"></i>    Balans yüklə</button>
-                            <button className='btn btn'>   <i class="fas fa-user-plus"></i>  Qeydiyyat</button>
+                            <button className='btn btn-y'> <i className="fas fa-plus-circle"></i>    Balans yüklə</button>
+                            <button className='btn btn'>   <i className="fas fa-user-plus"></i>  Qeydiyyat</button>
                             <button className='btn btn'>   <i></i>  Giriş </button>
                         </div>
                     }

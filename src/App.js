@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Homepage from './containers/Homepage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import SingleGame from './containers/SingleGame';
 import Benefit from './components/Benefit';
 
 
@@ -22,6 +23,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import slider1 from './assets/images/slider1.jpg'
 import slider2 from './assets/images/slider2.jpg'
+import { useLocation } from 'react-router-dom';
 
 
 // Additional
@@ -29,8 +31,9 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
 } from "react-router-dom";
+import { useEffect } from 'react';
 
 
 
@@ -72,29 +75,32 @@ function App() {
       prevArrow: <SamplePrevArrow/>
     };
 
+    const location = useLocation();
 
 
 
   return (
-    <Router>
     <div className="App">
       <Navbar/>
-
+         
+         { 
+          location.pathname === '/' && 
           <div className="slider">
-                <Slider {...settings}>
-                    <div>
-                        <img src={slider1} width='100%' height='auto' className='sliderElement sliderElement1'></img>
-                    </div>
-                    <a href='google.com'>
-                        <img src={slider2} width='100%' height='auto' className='sliderElement sliderElement2'></img>
-                    </a>
-                </Slider> 
+              <Slider {...settings}>
+                  <div>
+                      <img src={slider1} width='100%' height='auto' className='sliderElement sliderElement1'></img>
+                  </div>
+                  <a href='google.com'>
+                      <img src={slider2} width='100%' height='auto' className='sliderElement sliderElement2'></img>
+                  </a>
+              </Slider> 
             </div>
+            }
 
         <div className='mainCont'>
           <Switch>
-            <Route path="/single-game">
-              {/* <About /> */}
+            <Route path="/games/:id">
+              <SingleGame />
             </Route>
             <Route path="/member-area">
               {/* <Users /> */}
@@ -118,7 +124,6 @@ function App() {
 
       <Footer/>
     </div>
-    </Router>
   );
 }
 
