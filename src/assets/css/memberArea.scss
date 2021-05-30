@@ -2,228 +2,110 @@
 {
     width: 100%;
     min-height: 40vh;
-
-
-    .gamesTitle
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 62px;
+    padding-bottom: 150px;
+    background-color: #222;
+    
+    .linksCont
     {
         display: flex;
         justify-content: center;
-        margin-top: 50px;
+        height: 50px;
+        background-color: #292b39;
         width: 100%;
-        height: 120px;
-        border-radius: 5px;
-        overflow: hidden;
-        border-top: 1px solid lightgray;
-        border-bottom: 1px solid lightgray;
-        border-right: 1px solid lightgray;
-        background-image: url('../images/background.jpg');
-        .gamesTitleInside
+        .links
         {
-            height: 100%;
-            width: 100%;
-            // border-left: 6px solid green;
-            // border-right: 6px solid green;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
+            width: 950px;
             display: flex;
-            flex-direction: column;
-            padding-top: 5px;
-            justify-content: center;
-            .textTitle 
+            justify-content: space-between;
+            row-gap: 15px;
+            a 
             {
-                padding-right: 20px;
-                margin: 0px;
-                padding-left: 15px;
-                font-size: 65px;
-                color: white;
+                width: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                padding: 5px;
+                text-align: center;
+                border-left: 1px solid gray;
                 column-gap: 10px;
-                svg 
+                transition: 0.2s;
+                
+                &:last-child
                 {
-                    width: 70px;
-                    height: 70px;
+                    border-right: 1px solid gray;
                 }
             }
         }
+        
     }
-
-    .row 
+    .sidebar
     {
+        width: 100%;
+        background-color: #2d3338;
+        color: white;
         display: flex;
         justify-content: center;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        row-gap: 50px;
-        column-gap: 50px;
-        padding-top: 50px;
-        padding-bottom: 50px;
-        background-color: #f8f8fb;
-        @media screen and (max-width:1200px) {
-            .aboutGame 
-            {
-                order: 1;
-            }
-            .gameBuy
-            {
-                order: 2;
-            }
-            td 
-            {
-                font-size: 14px;
-            }
-        }
-        .gameBuy
+        align-items: center;
+        
+        .gamesTitle
         {
-            width: 700px;
-            height:auto;
-            border-radius: 5px;
-            border: 1px solid lightgray;
-            table
-            {
-                width: 100%;
-                padding: 20px;
-                border-collapse: collapse;
-                border: 0px;
-                height: auto;
-                tr , td 
-                {
-                    border: 0px;
-                }
-                
-                .tHead
-                {
-                    width: 100%;
-                    height: 35px;
-                    border-top: 1px solid lightgray;
-                    border-bottom: 1px solid lightgray;
-                    td 
-                    {
-                        padding: 10px;
-                        text-align: center;
-                        &:nth-child(1)
-                        {
-                            width: 50%;
-                        }
-                        &:nth-child(2)
-                        {
-                            width: 30%;
-                        }
-                        &:nth-child(3)
-                        {
-                            width: 20%;
-                        }
-                    }
-
-                }
-                .tBody
-                {
-                    width: 100%;
-                    height: 35px;
-                    .buyButton
-                    {
-                        width: 80px;
-                        height: 30px;
-                        font-size: 17px;
-                        border: none;
-                        background-color: rgb(84, 179, 84);
-                        color: white;
-                        border-radius: 10px;
-                        transition: 0.3s all;
-                    }
-                    .buyButton:hover
-                    {
-                        background-color: rgb(24, 141, 24);
-
-                    }
-                    td 
-                    {
-                        padding: 20px;
-                        padding-top: 10px;
-                        padding-bottom: 10px;
-                        border: none;
-                        text-align: center;
-                        border-bottom: 1px solid lightgray;
-
-                        &:nth-child(1)
-                        {
-                            width: 50%;
-                        }
-                        &:nth-child(2)
-                        {
-                            width: 30%;
-                        }
-                        &:nth-child(3)
-                        {
-                            width: 20%;
-                        }
-                       
-                    }
-                }
-
-
-            }
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            column-gap: 20px;
+            row-gap: 20px;
+            margin: 0px;
+            padding-top: 25px;
+            padding-bottom: 25px;
         }
-        .aboutGame
+        svg 
         {
-            width: 300px;
-            height:auto;
-            border-radius: 5px;
-            border: 1px solid lightgray;
-            overflow: hidden;
-            transition: 0.5s;
-            cursor: pointer;
-            
-            &:hover 
+            width: 40px;
+            height: 40px;
+        }
+        @media screen and (max-width:950px) {
+            .gamesTitle
             {
-                transform: translateY(-10px);
-                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                .line
-                {
-                    width: 50%;
-                }
-            }
-            .line
-            {
-                width: 0%;
-                background-color: green;
-                border-radius: 2px;
-                height: 3px;
-                transition: 0.3s all;
-            }
-            .gameImage
-            {
-                width: 100%;
-                height: 150px;
-            }
-            .aboutCont
-            {   
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-                padding-bottom: 10px;
-                padding-top: 30px;
-                background: linear-gradient(-180deg,rgba(0,0,0,0) 0% ,  rgba(0,0,0,1) 80% );
-            }
-            
-            h2 
-            {
-                text-align: center;
-                margin: 0px;
-                color: white;
-                text-shadow: 2px 2px black;
-            }
-            p 
-            {
-                margin: 0px;
-                text-shadow: 2px 2px black;
-                color: white;
-                text-align: center;
+                font-size: 25px;
             }
         }
     }
+    .row
+    {
+        width: 950px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        column-gap: 10px;
+        .gameBuy
+        {
+            display: flex;
+            height: 100px;
+            color: white;
+            font-size: 50px;
+            padding-top: 50px;
+            width: 100%;
+        }
+        @media screen and (max-width:950px) {
+            width: 95%;
+            .gameBuy
+            {
+                font-size: 35px;
+            }
+        }
+    }
+
+    
+
+
+    
 
 
 

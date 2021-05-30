@@ -90,15 +90,19 @@ function App() {
           }
           <div className='mainCont'>
             <Switch>
+
               <Route path="/games/:id">
                 <SingleGame />
               </Route>
+
               <Route path="/member-area">
-                <Memberarea/>
+                  <Memberarea/>
               </Route>
+
               <Route path="/">
                 <Homepage/>
               </Route>
+
             </Switch>
           </div>
         <div className='benefitsCont'>

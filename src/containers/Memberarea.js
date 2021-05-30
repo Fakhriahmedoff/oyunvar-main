@@ -4,37 +4,65 @@ import GamesIcon from '@material-ui/icons/Games';
 import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
 import pubg from '../assets/images/pubg.jpg'
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
-import { Link } from 'react-router-dom';
+import PermIdentityTwoToneIcon from '@material-ui/icons/PermIdentityTwoTone';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import PaymentIcon from '@material-ui/icons/Payment';
+import StoreIcon from '@material-ui/icons/Store';
+import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import { Link, Route, Router, Switch, useLocation } from 'react-router-dom';
+import { useMediaQuery } from '@material-ui/core';
 function Memberarea() {
-    const bgImage =  {
-        backgroundImage: `url(${pubg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'top center',
+    const location = useLocation();
+    const titles = useMediaQuery('(min-width:950px)')
+    
+
+    const buttonBorder = {
+        color: "white", 
+        borderBottom: "3px solid #285999",
+        background: 'linear-gradient(to top,rgba(91,90,254,.2),transparent)'
     }
 
+    const buttonBorderNormal = {
+        color:"#7d7068",
+        borderBottom: "3px solid transparent"
+    }
+
+    const styler = (link) => {
+        if (location.pathname === link) {
+        return buttonBorder
+        } 
+        else 
+        {
+        return buttonBorderNormal
+        }
+    }        
     return (
         <div className='page memberArea'>
-            <div className="gamesTitle"><div className="gamesTitleInside"><p className='textTitle'><AssignmentIndIcon/> Şəxsi Kabinet</p></div></div>
-            <div className="row">
-                <div className="sidebar" style={bgImage}>
-                    <div  className='humanimage'></div>
-                    <div className="links">
-                        <button>Bildirişlər</button>
-                        <button>Sifarişlər</button>
-                        <button>Ödənişlər</button>
-                        <button>Balans</button>
-                        <Link to="/memberarea/free-shipping" className="freeShipping">
-                            <button style={styler('/memberarea/free-shipping')}>
-                                <LocalShippingIcon /> 
-                            </button>
-                        </Link>
-                    </div>
+            <div className="sidebar" >
+                <p className="gamesTitle"><AssignmentIndIcon/> Həsənbala Mürşüdov</p>
+            </div>
+            <div className="linksCont">
+                <div className="links">
+                    <Link to="/member-area/notifications" style={styler('/member-area/notifications')}> <NotificationsIcon/> {titles && "Bildirişlər"} </Link>
+                    <Link to="/member-area/orders" style={styler('/member-area/orders')}> <StoreIcon/>  {titles && " Sifarişlər"} </Link>
+                    <Link to="/member-area/payment-history" style={styler('/member-area/payment-history')}> <PaymentIcon/> {titles && " Ödənişlər"} </Link>
+                    <Link to="/member-area/balance" style={styler('/member-area/balance')}> <AccountBalanceWalletIcon/> {titles && "Balans"}</Link>
+                    <Link to="/member-area/balance-up" style={styler('/member-area/balance-up')}> <ShoppingBasketIcon/> {titles && "Hesab Artırma"}</Link>
                 </div>
-                <div className="gameBuy">
+            </div>
+            <div className="row">
+                
 
-                <Route path="/memberarea/password">
-                    <About/>
-                </Route>
+                <div className="gameBuy">
+                    <Switch>
+                        <Route path="/member-area/notifications"> Bildirişlər</Route>
+                        <Route  path="/member-area/orders"> Sifarişlər</Route>
+                        <Route  path="/member-area/payment-history"> Ödənişlər</Route>
+                        <Route  path="/member-area/balance"> Balans</Route>
+                        <Route  path="/member-area/balance-up"> Hesab Artırma</Route>
+                        <Route path="/member-area/"> Salam</Route>
+                    </Switch>
                 </div>
             </div>
         </div>
