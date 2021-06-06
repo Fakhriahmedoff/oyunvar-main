@@ -49,7 +49,7 @@ function Memberarea() {
             <div className="linksCont">
                 <div className="links">
                     <Link to="/member-area/orders" style={styler('/member-area/orders')}> <StoreIcon/>  {titles && " Sifarişlər"} </Link>
-                    <Link to="/member-area/balance-up" style={styler('/member-area/')}> <ShoppingBasketIcon/> {titles && "Hesab Artırma"}</Link>
+                    <Link to="/member-area/" style={styler('/member-area/')}> <ShoppingBasketIcon/> {titles && "Hesab Artırma"}</Link>
                     <Link to="/member-area/notifications" style={styler('/member-area/notifications')}> <NotificationsIcon/> {titles && "Bildirişlər"} </Link>
                     <Link to="/member-area/payment-history" style={styler('/member-area/payment-history')}> <PaymentIcon/> {titles && " Ödənişlər"} </Link>
                 </div>

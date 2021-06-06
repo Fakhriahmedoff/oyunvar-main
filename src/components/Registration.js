@@ -153,24 +153,10 @@ function Registration(props) {
                     </div>
 
 
-
-                    {/* <label  className="key" >Hesab təsdiqləmə növü</label> */}
-                    {/* <div className="authType">
-                        <div className="authTypeCh authTypeCh1"><input checked className="authType1" onClick={() => authTypeHandler(1)}  type="checkbox" name="sms" id=""/> <label htmlFor="">Telefon</label></div>
-                        <div className="authTypeCh authTypeCh2"><input className="authType2" onClick={() => authTypeHandler(2)} type="checkbox" name="sms" id=""/> <label htmlFor="">Elektron poçt</label></div>
-                    </div> */}
-
                     <button className="submitBtn"  type="submit" > { `Daxil edin`} {loader && <ReactLoading type={"bubbles"} color={"lightblue"} height={"30px"} width={"30px"} />}</button>
                     {Error && <p className="errors">{`Daxil etdiyiniz elektron poçt artıq mövcuddur  `}</p>}
                 </Form>
             </Formik>
-            {/* <Modal  
-                style={{display:"flex", justifyContent:"center",overflow:"auto"}}
-                open={open}
-                aria-labelledby="simple-modal-title"
-                aria-describedby="simple-modal-description">
-                {<AuthSms UserId={userId} functionClose={() => handleClose() }  functionCloseReg={() => props.functionCloseReg()} />}
-            </Modal> */}
         </div>
     )
 }

@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState , useContext } from 'react'
+import {StateListingContext} from '../components/StateListingProvide'
 import '../assets/css/SingleGame.scss'
 import GamesIcon from '@material-ui/icons/Games';
 import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
@@ -11,6 +12,9 @@ function SingleGame() {
         backgroundPosition: 'top center',
         filter:'blur(0.15)',
     }
+    const [ loginOpen , loginClose , regOpen , regClose,openBalanceUp, closeBalanceUp, openBalance ,openbuyGameUp] = useContext(StateListingContext)
+
+
     return (
         <div className='page singlegame'>
             <div className="gamesTitle"><div className="gamesTitleInside"><p className='textTitle'><SportsEsportsIcon/> PUBG</p></div></div>
@@ -26,8 +30,8 @@ function SingleGame() {
                 <div className="gameBuy">
                     <table>
                         <tr className='tHead'> <td>Ödəniş növü</td>  <td>Miqdar</td> <td>Qiymət</td>  <td>AL</td> </tr>
-                        <tr className='tBody'> <td>100 UC</td>  <td>1kq</td>    <td>100azn</td>  <td><button className='buyButton'>AL</button></td> </tr>
-                        <tr className='tBody'> <td>100 UC</td>  <td>1kq</td>    <td>100azn</td>  <td><button className='buyButton'>AL</button></td> </tr>
+                        <tr className='tBody'> <td>100 UC</td>  <td>1kq</td>    <td>100azn</td>  <td><button onClick={openbuyGameUp} className='buyButton'>AL</button></td> </tr>
+                        <tr className='tBody'> <td>100 UC</td>  <td>1kq</td>    <td>100azn</td>  <td><button onClick={openbuyGameUp} className='buyButton'>AL</button></td> </tr>
                     </table>
                 </div>
             </div>
