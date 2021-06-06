@@ -12,6 +12,10 @@ import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Link, Route, Router, Switch, useLocation } from 'react-router-dom';
 import { useMediaQuery } from '@material-ui/core';
+import Orders from '../components/Orders';
+import BalanceUp from '../components/BalanceUp';
+import Notifications from '../components/Notifications';
+import Payments from '../components/Payments';
 function Memberarea() {
     const location = useLocation();
     const titles = useMediaQuery('(min-width:950px)')
@@ -44,11 +48,10 @@ function Memberarea() {
             </div>
             <div className="linksCont">
                 <div className="links">
-                    <Link to="/member-area/notifications" style={styler('/member-area/notifications')}> <NotificationsIcon/> {titles && "Bildirişlər"} </Link>
                     <Link to="/member-area/orders" style={styler('/member-area/orders')}> <StoreIcon/>  {titles && " Sifarişlər"} </Link>
+                    <Link to="/member-area/balance-up" style={styler('/member-area/')}> <ShoppingBasketIcon/> {titles && "Hesab Artırma"}</Link>
+                    <Link to="/member-area/notifications" style={styler('/member-area/notifications')}> <NotificationsIcon/> {titles && "Bildirişlər"} </Link>
                     <Link to="/member-area/payment-history" style={styler('/member-area/payment-history')}> <PaymentIcon/> {titles && " Ödənişlər"} </Link>
-                    <Link to="/member-area/balance" style={styler('/member-area/balance')}> <AccountBalanceWalletIcon/> {titles && "Balans"}</Link>
-                    <Link to="/member-area/balance-up" style={styler('/member-area/balance-up')}> <ShoppingBasketIcon/> {titles && "Hesab Artırma"}</Link>
                 </div>
             </div>
             <div className="row">
@@ -56,12 +59,10 @@ function Memberarea() {
 
                 <div className="gameBuy">
                     <Switch>
-                        <Route path="/member-area/notifications"> Bildirişlər</Route>
-                        <Route  path="/member-area/orders"> Sifarişlər</Route>
-                        <Route  path="/member-area/payment-history"> Ödənişlər</Route>
-                        <Route  path="/member-area/balance"> Balans</Route>
-                        <Route  path="/member-area/balance-up"> Hesab Artırma</Route>
-                        <Route path="/member-area/"> Salam</Route>
+                        <Route path="/member-area/notifications"> <Notifications/></Route>
+                        <Route  path="/member-area/orders"> <Orders/></Route>
+                        <Route  path="/member-area/payment-history"> <Payments/> </Route>
+                        <Route  path="/member-area/"> <BalanceUp/> </Route>
                     </Switch>
                 </div>
             </div>

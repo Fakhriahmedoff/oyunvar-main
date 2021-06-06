@@ -9,28 +9,12 @@ function SingleGame() {
         backgroundImage: `url(${pubg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'top center',
+        filter:'blur(0.15)',
     }
     return (
         <div className='page singlegame'>
             <div className="gamesTitle"><div className="gamesTitleInside"><p className='textTitle'><SportsEsportsIcon/> PUBG</p></div></div>
             <div className="row">
-                <div className="gameBuy">
-                    <table>
-                        <tr className='tHead'> <td>Ödəniş növü</td>  <td>Miqdar</td> <td>Qiymət</td>  <td>AL</td> </tr>
-                        <tr className='tBody'> <td>100 UC</td>  <td>1kq</td>    <td>100azn</td>  <td><button className='buyButton'>AL</button></td> </tr>
-                        <tr className='tBody'> <td>100 UC</td>  <td>1kq</td>    <td>100azn</td>  <td><button className='buyButton'>AL</button></td> </tr>
-                        <tr className='tBody'> <td>100 UC</td>  <td>1kq</td>    <td>100azn</td>  <td><button className='buyButton'>AL</button></td> </tr>
-                        <tr className='tBody'> <td>100 UC</td>  <td>1kq</td>    <td>100azn</td>  <td><button className='buyButton'>AL</button></td> </tr>
-                        <tr className='tBody'> <td>100 UC</td>  <td>1kq</td>    <td>100azn</td>  <td><button className='buyButton'>AL</button></td> </tr>
-                        <tr className='tBody'> <td>100 UC</td>  <td>1kq</td>    <td>100azn</td>  <td><button className='buyButton'>AL</button></td> </tr>
-                        <tr className='tBody'> <td>100 UC</td>  <td>1kq</td>    <td>100azn</td>  <td><button className='buyButton'>AL</button></td> </tr>
-                        <tr className='tBody'> <td>100 UC</td>  <td>1kq</td>    <td>100azn</td>  <td><button className='buyButton'>AL</button></td> </tr>
-                        <tr className='tBody'> <td>100 UC</td>  <td>1kq</td>    <td>100azn</td>  <td><button className='buyButton'>AL</button></td> </tr>
-                        <tr className='tBody'> <td>100 UC</td>  <td>1kq</td>    <td>100azn</td>  <td><button className='buyButton'>AL</button></td> </tr>
-                        <tr className='tBody'> <td>100 UC</td>  <td>1kq</td>    <td>100azn</td>  <td><button className='buyButton'>AL</button></td> </tr>
-                        <tr className='tBody'> <td>100 UC</td>  <td>1kq</td>    <td>100azn</td>  <td><button className='buyButton'>AL</button></td> </tr>
-                    </table>
-                </div>
                 <div className="aboutGame" style={bgImage}>
                     <div  className='gameImage'></div>
                     <div className="aboutCont">
@@ -38,6 +22,13 @@ function SingleGame() {
                         <p>ABout title</p>    
                         <div className='line'></div>
                     </div>
+                </div>
+                <div className="gameBuy">
+                    <table>
+                        <tr className='tHead'> <td>Ödəniş növü</td>  <td>Miqdar</td> <td>Qiymət</td>  <td>AL</td> </tr>
+                        <tr className='tBody'> <td>100 UC</td>  <td>1kq</td>    <td>100azn</td>  <td><button className='buyButton'>AL</button></td> </tr>
+                        <tr className='tBody'> <td>100 UC</td>  <td>1kq</td>    <td>100azn</td>  <td><button className='buyButton'>AL</button></td> </tr>
+                    </table>
                 </div>
             </div>
         </div>

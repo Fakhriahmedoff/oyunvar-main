@@ -10,6 +10,7 @@ header
     padding-right: 5%;
     position: fixed;
     z-index: 101;
+    box-shadow: 0 0 1px #fff, 0 0 10px #09a403, 0 0 4px #09a403, 0 0 5px #09a403, 0 0 6px #09a403, 0 0 7px #09a403, 0 0 8px #09a403;
 }
 
 header nav
@@ -61,11 +62,14 @@ header .btn
     align-items: center;
     font-size: 14px;
     column-gap: 10px;
-    transition: 0.5s background-color ;
+    transition: 0.5s;
+    background-color: #303f9f;
+    color: white;
+
 }
 header .btn:hover 
 {
-    background-color: gray;
+    background-color: #0d1b74;
     color: white;
 }
 header .btn-y 

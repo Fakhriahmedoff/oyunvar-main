@@ -4,6 +4,8 @@ body {
 }
 body {
   font-family: 'Poppins';
+  background-color: #222;
+
 }
 
 a 
@@ -27,6 +29,7 @@ button
   display: flex;
   justify-content: center;
   width: 100%;
+  background-color: #222;
 }
 
 .page

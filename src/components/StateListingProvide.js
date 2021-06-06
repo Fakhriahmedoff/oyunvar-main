@@ -49,6 +49,11 @@ export function StateListingProvide(props) {
                 aria-describedby="simple-modal-description">
                 {<Registration functionCloseReg={() => regClose()}  />}
             </Modal>
+
+
+
+
+            
         </StateListingContext.Provider>
     )
 }
