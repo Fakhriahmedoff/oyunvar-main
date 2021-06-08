@@ -59,10 +59,10 @@ function Memberarea() {
 
                 <div className="gameBuy">
                     <Switch>
-                        <Route path="/member-area/notifications"> <Notifications/></Route>
-                        <Route  path="/member-area/orders"> <Orders/></Route>
-                        <Route  path="/member-area/payment-history"> <Payments/> </Route>
-                        <Route  path="/member-area/"> <BalanceUp/> </Route>
+                        <Route exact   path="/member-area/notifications"> <Notifications/></Route>
+                        <Route exact   path="/member-area/orders"> <Orders/></Route>
+                        <Route exact   path="/member-area/payment-history"> <Payments/> </Route>
+                        <Route exact   path="/member-area/"> <BalanceUp/> </Route>
                     </Switch>
                 </div>
             </div>

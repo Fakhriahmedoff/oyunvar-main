@@ -12,6 +12,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SingleGame from './containers/SingleGame';
 import Benefit from './components/Benefit';
+import {ProtectedRoute} from "./components/protected.route";
 
 // İmages
 import benefitCard1 from './assets/images/benefit1.png'
@@ -28,6 +29,8 @@ import { useLocation } from 'react-router-dom';
 // Additional
 import { useEffect } from 'react';
 import Memberarea from './containers/Memberarea';
+import auth  from './components/auth';
+import axios from 'axios';
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -68,8 +71,7 @@ function App() {
     };
 
     const location = useLocation();
-
-
+  
 
   return (
     <StateListingProvide>
@@ -95,13 +97,12 @@ function App() {
                 <SingleGame />
               </Route>
 
-              <Route path="/member-area">
-                  <Memberarea/>
-              </Route>
-
+              <ProtectedRoute  path='/member-area' component={ Memberarea}/>
               <Route path="/">
                 <Homepage/>
               </Route>
+
+
 
             </Switch>
           </div>

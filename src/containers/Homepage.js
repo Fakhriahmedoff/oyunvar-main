@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import "../assets/css/Homepage.scss"
 import GamesIcon from '@material-ui/icons/Games';
@@ -17,6 +17,7 @@ import gameimage6 from  '../assets/images/pubglite.jpg'
 
 import Game from '../components/Game';
 import { useLocation } from 'react-router-dom';
+import auth from '../components/auth';
 
 
 
@@ -26,7 +27,7 @@ import { useLocation } from 'react-router-dom';
 
 function Homepage() {
     const location = useLocation();
-    console.log(location.pathname)
+    
     
 
     return (

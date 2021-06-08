@@ -12,7 +12,9 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import '../assets/css/balanceUpModal.scss'
+import axios from 'axios';
 export const StateListingContext = createContext()
+
 export function StateListingProvide(props) {   
     
     const [open3, setOpen3] = React.useState(false);
@@ -20,6 +22,30 @@ export function StateListingProvide(props) {
     const [openBalance, setopenBalance] = React.useState(false);
     const [buyGame, setbuyGame] = React.useState(false);
     const [gameID, setGameID] = React.useState();
+    const [loggged, setloggged] = useState(sessionStorage.getItem('logged') === null ?  false : sessionStorage.getItem('logged'))
+
+    const authCheck = async() => {
+        try {
+            const resp = await axios.post('https://oyunvar.az/api/getuserdata' , {token:JSON.parse(localStorage.getItem('token'))})
+            if(resp.data.api_token !== undefined &&  resp.data.api_token !== null && resp.data.api_token === JSON.parse(localStorage.getItem('token')))
+            {
+                console.log('true')
+                setloggged(true)
+                sessionStorage.setItem('logged' , true)
+                return true
+            }
+            else 
+            {
+                setloggged(false)
+                sessionStorage.setItem('logged' , false)
+                return false
+            }
+        } catch (error) {
+            setloggged(false)
+            sessionStorage.setItem('logged' , false)
+            return false
+        }
+    }
 
 
     const gameIDsetter = () => {
@@ -82,8 +108,13 @@ export function StateListingProvide(props) {
     const submitForm = () => {
 
     }
+
+    useEffect(() => {
+        authCheck()
+    }, [])
+
     return (
-        <StateListingContext.Provider value={[loginOpen , loginClose , regOpen , regClose,openBalanceUp, closeBalanceUp, openBalance ,openbuyGameUp]}>
+        <StateListingContext.Provider value={[loginOpen , loginClose , regOpen , regClose,openBalanceUp, closeBalanceUp, openBalance ,openbuyGameUp, loggged, setloggged]}>
             
             {props.children}
 
