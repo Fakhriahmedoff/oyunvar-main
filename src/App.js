@@ -109,10 +109,10 @@ function App() {
         <div className='benefitsCont'>
           {/* <div className="benefitsTitle"><div className="gamesTitleInside"><p className='textTitle'><GamesIcon/> BENEFITS</p></div></div> */}
           <div className="benefits">
-                  <Benefit image={benefitCard1} text="TEST"/>
-                  <Benefit image={benefitCard2} text="TEST"/>
-                  <Benefit image={benefitCard3} text="TEST"/>
-                  <Benefit image={benefitCard4} text="TEST"/>
+                  <Benefit image={benefitCard1} text="Keyiyyət"/>
+                  <Benefit image={benefitCard2} text="Təhlükəsizlik"/>
+                  <Benefit image={benefitCard3} text="Xidmət"/>
+                  <Benefit image={benefitCard4} text="Razılıq"/>
           </div>
         </div>
         <Footer/>

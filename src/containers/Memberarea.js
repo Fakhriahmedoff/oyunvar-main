@@ -2,7 +2,6 @@ import React from 'react'
 import '../assets/css/memberArea.scss'
 import GamesIcon from '@material-ui/icons/Games';
 import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
-import pubg from '../assets/images/pubg.jpg'
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import PermIdentityTwoToneIcon from '@material-ui/icons/PermIdentityTwoTone';
 import NotificationsIcon from '@material-ui/icons/Notifications';
@@ -20,7 +19,7 @@ function Memberarea() {
     const location = useLocation();
     const titles = useMediaQuery('(min-width:950px)')
     
-
+ 
     const buttonBorder = {
         color: "white", 
         borderBottom: "3px solid #285999",
@@ -30,7 +29,7 @@ function Memberarea() {
     const buttonBorderNormal = {
         color:"#7d7068",
         borderBottom: "3px solid transparent"
-    }
+    } 
 
     const styler = (link) => {
         if (location.pathname === link) {

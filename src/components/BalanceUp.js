@@ -9,7 +9,7 @@ const useStylesBtn = makeStyles({
     }
   });
 function BalanceUp() {
-    const [ loginOpen , loginClose , regOpen , regClose,openBalanceUp, closeBalanceUp, openBalance] = useContext(StateListingContext)
+    const [ loginOpen , loginClose , regOpen , regClose,openBalanceUp, closeBalanceUp, openBalance ,openbuyGameUp, loggged, setloggged, person_token] = useContext(StateListingContext)
     
     const btn = useStylesBtn()
     return (

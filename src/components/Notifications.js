@@ -55,11 +55,6 @@ function Notifications() {
                     <ListItemText
                       primary="Bildirişlər"
                     />
-                    <ListItemSecondaryAction>
-                      <IconButton className={classes.colorW} edge="end" aria-label="delete">
-                        <DeleteIcon />
-                      </IconButton>
-                    </ListItemSecondaryAction>
                   </ListItem>
               </List>
             </div>

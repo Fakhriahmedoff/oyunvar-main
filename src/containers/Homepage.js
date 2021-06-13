@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import "../assets/css/Homepage.scss"
 import GamesIcon from '@material-ui/icons/Games';
@@ -18,6 +18,7 @@ import gameimage6 from  '../assets/images/pubglite.jpg'
 import Game from '../components/Game';
 import { useLocation } from 'react-router-dom';
 import auth from '../components/auth';
+import axios from 'axios';
 
 
 
@@ -27,8 +28,16 @@ import auth from '../components/auth';
 
 function Homepage() {
     const location = useLocation();
-    
-    
+
+    const [games, setgames] = useState([])
+    const getAllGames = async () => {
+        const resp = await axios.get('https://oyunvar.az/api/allgames')
+        setgames(resp.data)
+    }
+
+    useEffect(() => {
+        getAllGames()
+    }, [])
 
     return (
          
@@ -37,12 +46,7 @@ function Homepage() {
             <div>
             <div className="gamesTitle"><div className="gamesTitleInside"><p className='textTitle'><GamesIcon/> OYUNLAR</p></div></div>
             <div className="gamesCont">
-                <Game image={gameimage3} id='2' text="Point Blank"/>
-                <Game image={gameimage2} id='2' text="MOBILE LEGENDS"/>
-                <Game image={gameimage4} id='2' text="PUBG"/>
-                <Game image={gameimage5} id='2' text="ZULA"/>
-                <Game image={gameimage1} id='2' text="FREE FIRE"/>
-                <Game image={gameimage6} id='2' text="PUBG LITE"/>
+                {games.map(game =>  <Game image={`https://oyunvar.az/storage/app/public/${game.image}`} id={game.id} name={game.name}/>)}
             </div>
             </div>
             

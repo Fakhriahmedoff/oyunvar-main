@@ -12,7 +12,35 @@ header
     z-index: 101;
     box-shadow: 0 0 1px #fff, 0 0 10px #09a403, 0 0 4px #09a403, 0 0 5px #09a403, 0 0 6px #09a403, 0 0 7px #09a403, 0 0 8px #09a403;
 }
-
+.menuBtn svg
+{
+        width: 35px;
+        height:35px;
+        color:lightgray;
+}
+.buttonsDrawer
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+    row-gap: 20px;
+    text-align: center;
+}
+.buttonsDrawer a
+{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    color: gray;
+} 
+.drawerTitle
+{
+    font-size: 30px;
+    text-align: center;
+}
 header nav
 {
     width: 100%;
@@ -82,6 +110,6 @@ header .btn-y
 {
     header nav 
     {
-        justify-content: center;
+        justify-content: space-between;
     }
 }

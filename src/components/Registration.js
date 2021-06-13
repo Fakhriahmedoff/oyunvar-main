@@ -16,8 +16,12 @@ toast.configure()
 
 
 function Registration(props) {
+    const [loginOpen , loginClose , regOpen , regClose,openBalanceUp, closeBalanceUp, openBalance ,openbuyGameUp, loggged, setloggged, person_token] = useContext(StateListingContext)
+
+
     const notifyW = () => toast.error("Daxil etdiyiniz məlumatları yanlışdır!");
     const notify = () => toast.info("Hesabınız müvəfəqiyyətlə yaradıldı!");
+    const notifyCheck = () => toast.error("Məlumatların düzgünlüyünü bir daha yoxlayın!");
 
     const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
     const [loader, setloader] = useState(false)
@@ -31,29 +35,25 @@ function Registration(props) {
     const [Error, setError] = useState(false)
     const [userId, setuserId] = useState('')
 
-    const onSubmit =  (values) => {
-        let defualtValue = '994'
-        if (phoneValue.length > 9) {
-            defualtValue += phoneValue.slice(1,10)
+    const onSubmit =  async (values) => {
+        try {
+            setloader(true)
+            const dt = new FormData()
+            dt.append('name' , values.name)
+            dt.append('email' , values.email)
+            dt.append('password' , values.password)
+            const resp = await axios.post('https://oyunvar.az/api/qeydiyyat', dt )
+            setloggged(true)
+            setloader(false) 
+            regClose()
+            localStorage.setItem("token" , JSON.stringify(resp.data))
+            notify()
+            handleOpen() 
+        } catch (error) {
+            notifyCheck()
+            setloader(false)
+
         }
-        else 
-        {
-            defualtValue += phoneValue
-        }
-        setloader(true)
-        const dt = new FormData()
-        dt.append('name' , values.name)
-        dt.append('email' , values.email)
-        dt.append('phone' ,   defualtValue)
-        dt.append('password' , values.password)
-        dt.append('birthdate' , selectedDate.toISOString().slice(0,10))
-        if (profilePhoto !== null) {
-            dt.append('profilePhoto' , profilePhoto)
-        }
-        dt.append('auth_type' , 1)
-        // axios.post('https://nehra.az/public/api/login', dt , headers)
-        // .then(res => (setloader(false) , res.status === 200 && (localStorage.setItem("LoginUserData" , JSON.stringify(res.data)) ,  notify() ,  handleOpen() ) ) ) 
-        // .catch(err => (setloader(false) , setError(true)))
     }
 
     const [phoneValue, setphoneValue] = useState()
@@ -134,12 +134,12 @@ function Registration(props) {
                         <ErrorMessage name="email"/>
                     </div>
 
-                    <label  className="key" >{`Telefon Nömrəsi`}</label>            
+                    {/* <label  className="key" >{`Telefon Nömrəsi`}</label>            
                     <div className="errors">            
                         <div className='phoneCont'> <span>+994</span> <Field required value={phoneValue} onChange={handleChange1} className="value" maxlength='10' minlength='9' type='text' name="phone" placeholder="0555555555"/></div>
                         <ErrorMessage name="phone"/>
                     </div>
-                    
+                     */}
                     <label  className="key" >{`Şifrə`}</label>                                  
                     <div className="errors">
                         <Field type="password" className="value" name="password" placeholder="Parol" type="password"/>

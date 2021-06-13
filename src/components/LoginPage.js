@@ -14,7 +14,7 @@ import ReactLoading from 'react-loading';
 toast.configure()
 
 function LoginPage(props) {
-    const [ loginOpen , loginClose , regOpen , regClose,openBalanceUp, closeBalanceUp, openBalance ,openbuyGameUp, loggged, setloggged] = useContext(StateListingContext)
+    const [loginOpen , loginClose , regOpen , regClose,openBalanceUp, closeBalanceUp, openBalance ,openbuyGameUp, loggged, setloggged, person_token] = useContext(StateListingContext)
 
 
 
@@ -23,7 +23,7 @@ function LoginPage(props) {
     const [loader, setloader] = useState(false)
     const clickHandler = () => {
         props.functionClose()
-        props.registerFunc()
+        props.regOpen()
     }
 
 

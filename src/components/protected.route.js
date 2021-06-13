@@ -8,7 +8,7 @@ export const ProtectedRoute = ({
   ...rest
 }) => {
 
-const [ loginOpen , loginClose , regOpen , regClose,openBalanceUp, closeBalanceUp, openBalance ,openbuyGameUp, loggged, setloggged] = useContext(StateListingContext)
+const [ loginOpen , loginClose , regOpen , regClose,openBalanceUp, closeBalanceUp, openBalance ,openbuyGameUp, loggged, setloggged, person_token] = useContext(StateListingContext)
 
 
 
