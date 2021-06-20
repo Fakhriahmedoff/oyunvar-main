@@ -33,7 +33,7 @@ export function StateListingProvide(props) {
 
     const notifyLogin = () => toast.error(`Hesabınıza daxil olun!`);
     const notifyBalanceUp = () => toast.success(`Sorğunuz göndərilmişdir , tezliklə təsdiqlənəcək!`);
-    const notifyAgain = () => toast.error(`Bir müddət sonra yenidən cəhd edin!`);
+    const notifyAgain = () => toast.error("Balansınızı artırın və birdə yoxlayın.");
     const notifyEnterRight = () => toast.error(`Məlumatları düzgün daxil edin!`);
 
     const authCheck = async() => {
@@ -131,7 +131,7 @@ export function StateListingProvide(props) {
     const submitBalanceUpForm = async (e) => {
         e.preventDefault();
         if (loggged) {
-            if ( price > 0 && billPhoto !== null) {
+            if (billPhoto !== null) {
                 const formData = new FormData()
                 formData.append('invoice' , billPhoto)
                 formData.append('account_id' , game_accountID)
@@ -173,14 +173,11 @@ export function StateListingProvide(props) {
                 formData.append('account_id' , game_accountID)
                 formData.append('token' , person_token)
                 formData.append('price' , GamePrice)
-                const resp = await axios.post(`https://oyunvar.az/api/ordergame` , formData)
-                if(resp.status === 200)
-                {
+                try {
+                    const resp = await axios.post(`https://oyunvar.az/api/ordergame` , formData)
                     notifyBalanceUp()
                     closebuyGameUp()
-                }
-                else 
-                {
+                } catch (error) {
                     notifyAgain()
                 }
             }
@@ -199,10 +196,16 @@ export function StateListingProvide(props) {
     useEffect(() => {
         if (sessionStorage.getItem('logged') !== null && sessionStorage.getItem('logged') !== undefined) {
             setloggged(JSON.parse(sessionStorage.getItem('logged')))
+            getuserData()
         }
         authCheck()
     }, [])
 
+    const [balance, setbalance] = useState(0)
+    const getuserData = async() => {
+        const resp = await axios.post('https://oyunvar.az/api/getuserdata' , {token:person_token})
+        setbalance(resp.data.balance)
+    }
     return (
         <StateListingContext.Provider value={[loginOpen , loginClose , regOpen , regClose,openBalanceUp, closeBalanceUp, openBalance ,openbuyGameUp, loggged, setloggged, person_token]}>
             
@@ -242,7 +245,6 @@ export function StateListingProvide(props) {
                     </DialogContentText>
                     <Button type='button' variant='outlined' color="secondary" className='balance_up_upload'>{billPhoto?.name !== undefined ? billPhoto.name  : `Çek şəklini yüklə` }<input onChange={ppchanger} name="profile" className='input addFileInput' type="file" /></Button>
                     
-                    <TextField autoFocus margin="dense" id="name" onChange={changePrice} value={price} label="Miqdarı daxil edin" type="text" fullWidth />
                     </DialogContent>
 
                     <DialogActions>
@@ -266,9 +268,8 @@ export function StateListingProvide(props) {
                         <DialogTitle id="form-dialog-title">Ödəmə</DialogTitle>
                         <DialogContent>
                         <DialogContentText>
-                            <p>Balansınız - </p>
-                            <p>Game id - {GameId}</p>
-                            <p>Ödəniş növü - {PaymentType}</p>
+                            <p>Balansınız - {balance}</p>
+                            <p>Ödəniş: {PaymentType}</p>
                             <p>Qiymət - {GamePrice} AZN</p>
                             <p>Bizdən alın - OyunVar.az</p>
                         </DialogContentText>

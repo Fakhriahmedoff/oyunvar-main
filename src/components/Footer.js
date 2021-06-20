@@ -17,7 +17,7 @@ function Footer() {
                 </div>
 
                 <div className='text-cont-f'>
-                    <h2>GoAfaz.com</h2>   
+                    <h2>Oyuvar.az</h2>   
                     <p>
                         <a href='#'>Oyunlar</a>
                         <a href='#'>Ödəmə Yöntəmləri</a>

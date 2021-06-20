@@ -53,7 +53,7 @@ function Payments() {
                     <TableHead>
                     <TableRow>
                         <TableCell  className={classes.tableCell} align="center">Ödənilən Miqdar</TableCell>
-                        <TableCell  className={classes.tableCell}  align="center">Çek</TableCell>
+                        <TableCell  className={classes.tableCell}  align="center">Çekə bax</TableCell>
                         <TableCell  className={classes.tableCell} align="center">Statusu</TableCell>
                         <TableCell  className={classes.tableCell} align="center">Tarixi</TableCell>
                     </TableRow>
@@ -64,7 +64,7 @@ function Payments() {
                         <TableRow>
                             <TableCell  className={classes.tableCell} align="center">{order.price} AZN</TableCell>
                             <TableCell  className={classes.tableCell} align="center"><a href={`${window.location.href + "/" + order.invoice}`} download><Button variant="outlined" color="secondary">yüklə</Button> </a></TableCell>
-                            <TableCell  className={classes.tableCell} align="center">{order.status}</TableCell>
+                            <TableCell  className={classes.tableCell} align="center">{(order.status === "pending" && "Gözləmədədir") || (order.status === "finished" && "Təsdiqlənmişdir") || (order.status === "declined" && "Rədd edilmişdir")}</TableCell>
                             <TableCell  className={classes.tableCell} align="center">{order.created_at.slice(0,10)}</TableCell>
                         </TableRow>)}
                     </TableBody>
