@@ -19,7 +19,7 @@ function SingleGame() {
     const [gameRows, setGameRows] = useState([])
 
     const getSingleGame = async () => {
-        const resp = await axios.get(`https://oyunvar.az/api/oyunlar/${id}`)
+        const resp = await axios.get(`https://admin.oyunvar.az/api/oyunlar/${id}`)
         setSgameData(resp.data.game)
         console.log(resp.data)
         setGameRows(resp.data.rows)

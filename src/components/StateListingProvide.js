@@ -38,7 +38,7 @@ export function StateListingProvide(props) {
 
     const authCheck = async() => {
         try {
-            const resp = await axios.post('https://oyunvar.az/api/getuserdata' , {token:person_token})
+            const resp = await axios.post('https://admin.oyunvar.az/api/getuserdata' , {token:person_token})
             if(resp.data.api_token !== undefined &&  resp.data.api_token !== null && resp.data.api_token === person_token)
             {
                 setperson_token(resp.data.api_token)
@@ -137,7 +137,7 @@ export function StateListingProvide(props) {
                 formData.append('account_id' , game_accountID)
                 formData.append('token' , person_token)
                 formData.append('price' , price)
-                const resp = await axios.post(`https://oyunvar.az/api/balanceup` , formData )
+                const resp = await axios.post(`https://admin.oyunvar.az/api/balanceup` , formData )
                 if(resp.status === 200)
                 {
                     notifyBalanceUp()
@@ -174,7 +174,7 @@ export function StateListingProvide(props) {
                 formData.append('token' , person_token)
                 formData.append('price' , GamePrice)
                 try {
-                    const resp = await axios.post(`https://oyunvar.az/api/ordergame` , formData)
+                    const resp = await axios.post(`https://admin.oyunvar.az/api/ordergame` , formData)
                     notifyBalanceUp()
                     closebuyGameUp()
                 } catch (error) {
@@ -203,7 +203,7 @@ export function StateListingProvide(props) {
 
     const [balance, setbalance] = useState(0)
     const getuserData = async() => {
-        const resp = await axios.post('https://oyunvar.az/api/getuserdata' , {token:person_token})
+        const resp = await axios.post('https://admin.oyunvar.az/api/getuserdata' , {token:person_token})
         setbalance(resp.data.balance)
     }
     return (

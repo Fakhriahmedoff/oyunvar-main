@@ -31,7 +31,7 @@ function Homepage() {
 
     const [games, setgames] = useState([])
     const getAllGames = async () => {
-        const resp = await axios.get('https://oyunvar.az/api/allgames')
+        const resp = await axios.get('https://admin.oyunvar.az/api/allgames')
         setgames(resp.data)
     }
 
@@ -46,7 +46,7 @@ function Homepage() {
             <div>
             <div className="gamesTitle"><div className="gamesTitleInside"><p className='textTitle'><GamesIcon/> OYUNLAR</p></div></div>
             <div className="gamesCont">
-                {games.map(game =>  <Game image={`https://oyunvar.az/storage/app/public/${game.image}`} id={game.id} name={game.name}/>)}
+                {games.map(game =>  <Game image={`https://admin.oyunvar.az/storage/app/public/${game.image}`} id={game.id} name={game.name}/>)}
             </div>
             </div>
             

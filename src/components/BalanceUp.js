@@ -14,7 +14,7 @@ function BalanceUp() {
     const [ loginOpen , loginClose , regOpen , regClose,openBalanceUp, closeBalanceUp, openBalance ,openbuyGameUp, loggged, setloggged, person_token] = useContext(StateListingContext)
     const [balance, setbalance] = useState()
     useEffect(async () => {
-        const resp = await axios.post('https://oyunvar.az/api/getuserdata' , {token:person_token})
+        const resp = await axios.post('https://admin.oyunvar.az/api/getuserdata' , {token:person_token})
         setbalance(resp.data.balance)
     }, [])
     const btn = useStylesBtn()

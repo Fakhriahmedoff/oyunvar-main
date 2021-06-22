@@ -30,7 +30,7 @@ function LoginPage(props) {
     const onSubmit = async (values) => {
         setloader(true)
         try {
-            const resp = await axios.post('https://oyunvar.az/api/login', { email: values.email ,  password: values.password }  )
+            const resp = await axios.post('https://admin.oyunvar.az/api/login', { email: values.email ,  password: values.password }  )
             console.log(resp)
             localStorage.setItem("token" , JSON.stringify(resp.data.api_token))
             setloggged(true)

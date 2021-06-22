@@ -34,7 +34,7 @@ function Payments() {
             console.log(person_token)
             const form = new FormData()
             form.append('token' ,  person_token)
-            const resp = await axios.post('https://oyunvar.az/api/kabinet/myorders' , form)
+            const resp = await axios.post('https://admin.oyunvar.az/api/kabinet/myorders' , form)
             setorders(resp.data)
         } catch (error) {
             console.log(error.message)

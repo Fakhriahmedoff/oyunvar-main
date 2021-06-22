@@ -33,7 +33,7 @@ function Orders() {
             console.log(person_token)
             const form = new FormData()
             form.append('token' ,  person_token)
-            const resp = await axios.post('https://oyunvar.az/api/kabinet/gameorders' , form)
+            const resp = await axios.post('https://admin.oyunvar.az/api/kabinet/gameorders' , form)
             setorders(resp.data)
         } catch (error) {
             

@@ -42,7 +42,7 @@ function Registration(props) {
             dt.append('name' , values.name)
             dt.append('email' , values.email)
             dt.append('password' , values.password)
-            const resp = await axios.post('https://oyunvar.az/api/qeydiyyat', dt )
+            const resp = await axios.post('https://admin.oyunvar.az/api/qeydiyyat', dt )
             setloggged(true)
             setloader(false) 
             regClose()
