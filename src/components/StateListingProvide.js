@@ -119,12 +119,10 @@ export function StateListingProvide(props) {
     const [price, setprice] = useState()
 
     const changePrice = (e) => {
-        const value = e.target.value.replace(/\D/g, "");
-        setprice(value)
+        setprice(e.target.value)
     }
     const changeAccountID = (e) => {
-        const value = e.target.value.replace(/\D/g, "");
-        setGameAccountID(value)
+        setGameAccountID(e.target.value)
     }
 
 
