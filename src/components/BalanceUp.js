@@ -21,7 +21,7 @@ function BalanceUp() {
     return (
         <div>
             Balans Artırma
-            <p className='yourbalance'>Sizin hazırkı balansınız - {balance}</p>
+            <p className='yourbalance'>Sizin hazırkı balansınız - {balance} AZN</p>
             <Button onClick={openBalanceUp} className={btn.btn} variant="contained">Balans Artır</Button> 
         </div>
     )

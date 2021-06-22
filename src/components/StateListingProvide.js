@@ -43,16 +43,16 @@ export function StateListingProvide(props) {
             {
                 setperson_token(resp.data.api_token)
                 setloggged(true)
-                sessionStorage.setItem('logged' , true)
+                localStorage.setItem('logged' , true)
             }
             else 
             {
                 setloggged(false)
-                sessionStorage.setItem('logged' , false)
+                localStorage.setItem('logged' , false)
             }
         } catch (error) {
             setloggged(false)
-            sessionStorage.setItem('logged' , false)
+            localStorage.setItem('logged' , false)
             localStorage.removeItem('token')
             setperson_token(null)
         }
@@ -192,8 +192,8 @@ export function StateListingProvide(props) {
         }
     }
     useEffect(() => {
-        if (sessionStorage.getItem('logged') !== null && sessionStorage.getItem('logged') !== undefined) {
-            setloggged(JSON.parse(sessionStorage.getItem('logged')))
+        if (localStorage.getItem('logged') !== null && localStorage.getItem('logged') !== undefined) {
+            setloggged(JSON.parse(localStorage.getItem('logged')))
             getuserData()
         }
         authCheck()
