@@ -82,7 +82,7 @@ function Navbar() {
             <nav>
                     <div className='text-cont'>
 
-                        <Link to="/"><img width='20px' height='20px' src={logo} width='150px' height='auto' alt="" /></Link> 
+                        <Link to="/"><img  height='20px' src={logo} width='50px' height='auto' alt="" /></Link> 
                         {
                             !mobilenav &&
                             <>
