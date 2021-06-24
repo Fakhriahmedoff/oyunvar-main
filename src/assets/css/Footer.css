@@ -9,7 +9,7 @@ footer
     width: 90%;
     padding-left: 5%;
     padding-right: 5%;
-    background-color: #222;
+    background-color: rgb(214, 214, 214);
     align-self: flex-end;
 }
 footer .f1 
@@ -30,7 +30,7 @@ footer .text-cont-f
 footer .text-cont-f h2 
 {
     font-size: 20px;
-    color: white;
+    color: black;
     margin: 0px;
     text-transform: uppercase;
     font-weight: 400;
@@ -46,7 +46,7 @@ footer .text-cont-f p
 footer .text-cont-f p a 
 {
     text-decoration: none;
-    color: gray;
+    color: black;
     transition: 0.3s;
 }
 footer .text-cont-f p a:hover 
@@ -58,7 +58,7 @@ footer .text-cont-f .text
 {
     font-size: 18px;
     margin: 0px;
-    color: gray;
+    color: black;
     text-align: justify;
     width: 350px;
 }
@@ -104,7 +104,7 @@ footer .f2 .social-cont
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background-color:rgb(97, 95, 95);
+    background-color:rgb(255, 255, 255);
     transition: 0.4s;
     cursor: pointer;
     display: flex;
@@ -138,7 +138,7 @@ footer .f2 .social-cont4:hover
 footer .f3 
 {
     width: 100%;
-    color: gray;
+    color: black;
     display: flex;
     justify-content: center;
     font-size: 15px;

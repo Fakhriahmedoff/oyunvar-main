@@ -4,7 +4,7 @@ body {
 }
 body {
   font-family: 'Poppins';
-  background-color: #222;
+  background-color: rgb(161, 159, 159);
 
 }
 
@@ -33,7 +33,7 @@ button
   display: flex;
   justify-content: center;
   width: 100%;
-  background-color: #222;
+  background-color: rgb(247, 247, 247);
 }
 
 .page
