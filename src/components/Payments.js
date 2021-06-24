@@ -59,12 +59,13 @@ function Payments() {
                     </TableHead>
                     <TableBody>
                         {
-                        orders.map( order => 
-                        <TableRow>
-                            <TableCell  className={classes.tableCell} align="center">{order.price} AZN</TableCell>
-                            <TableCell  className={classes.tableCell} align="center">{(order.status === "pending" && "Gözləmədədir") || (order.status === "finished" && "Təsdiqlənmişdir") || (order.status === "declined" && "Rədd edilmişdir")}</TableCell>
-                            <TableCell  className={classes.tableCell} align="center">{order.created_at.slice(0,10)}</TableCell>
-                        </TableRow>)}
+                            orders.map( order => 
+                            <TableRow>
+                                <TableCell  className={classes.tableCell} align="center">{order.price} AZN</TableCell>
+                                <TableCell  className={classes.tableCell} align="center">{(order.status === "pending" && "Gözləmədədir") || (order.status === "finished" && "Təsdiqlənmişdir") || (order.status === "declined" && "Rədd edilmişdir")}</TableCell>
+                                <TableCell  className={classes.tableCell} align="center">{order.created_at.slice(0,10)}</TableCell>
+                            </TableRow>)
+                        }
                     </TableBody>
                 </Table>
             </TableContainer>
